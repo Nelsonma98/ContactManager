@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "89bd1311-4648-4141-8fb2-989b13bda3e8",
+		"name": "ContactManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20413619"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Firstname\": \"Nelson\",\n    \"Lastname\": \"Mendoza\",\n    \"Username\": \"SpNel\",\n    \"Password\": \"1234\",\n    \"Roles\": [\"Administrator\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5052/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5052",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"UserName\": \"SpNel\",\n    \"Password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5052/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5052",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contact",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImQ5MmRiZDJkLTQ4MzktNDg2ZS1hN2VkLWM5MWFlNjE3ZTZjYSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJTcE5lbCIsIkNvdW50cnkiOiJDVSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE3MTI3MTU3MTMsImV4cCI6MTcxMjgwMjExM30.A8dYdfOpACVfnLrY_pNkdmQLW188-3cp_vpqhLaMO-0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJCYXNlV2ViQXBpU3ViamVjdCIsImp0aSI6IjAwOGM2NmViLTZmNjgtNGUzZC04MzBmLTdjM2VhNGUwOWUwZiIsImlhdCI6IjgvNC8yMDI0IDQ6MDM6NDUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjJmMTYyYTkyLTZiYzYtNDU0NS1iODY0LTJiOWI4NDQ2NTA5MiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzEyNjM1NDI1fQ.AEovAy9JSiIN569VoopeXFeFRbAwQUJqEWZ-VVYpehY",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"FirstName\": \"Naruto\",\n    \"LastName\": \"Uzumaki\",\n    \"Email\": \"ninja@gmail.com\",\n    \"DateOfBirth\": \"1998-10-10T15:00:00Z\",\n    \"Phone\": \"56000000\",\n    \"Owner\": \"D92DBD2D-4839-486E-A7ED-C91AE617E6CA\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5052/api/contacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5052",
+							"path": [
+								"api",
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImQ5MmRiZDJkLTQ4MzktNDg2ZS1hN2VkLWM5MWFlNjE3ZTZjYSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJTcE5lbCIsIkNvdW50cnkiOiJDVSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE3MTI3MTU3MTMsImV4cCI6MTcxMjgwMjExM30.A8dYdfOpACVfnLrY_pNkdmQLW188-3cp_vpqhLaMO-0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJCYXNlV2ViQXBpU3ViamVjdCIsImp0aSI6IjhjMzg1ZjFlLWM3NTEtNDJlMC1hOGRkLWE1NjA4MTZhZjQ3YiIsImlhdCI6IjkvNC8yMDI0IDM6MzI6NDkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjJmMTYyYTkyLTZiYzYtNDU0NS1iODY0LTJiOWI4NDQ2NTA5MiIsIlVzZXJOYW1lIjoiU3BOZWwiLCJQYXNzd29yZCI6IjEyMzQiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTA1MiIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTA1MiJ9.l4DA3nnZcMvlRiw6661IQO7rJQ1AybyIc6B0Oh3jseU",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5052/api/contacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5052",
+							"path": [
+								"api",
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find one",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImQ5MmRiZDJkLTQ4MzktNDg2ZS1hN2VkLWM5MWFlNjE3ZTZjYSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJTcE5lbCIsIkNvdW50cnkiOiJDVSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE3MTI3MTU3MTMsImV4cCI6MTcxMjgwMjExM30.A8dYdfOpACVfnLrY_pNkdmQLW188-3cp_vpqhLaMO-0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJCYXNlV2ViQXBpU3ViamVjdCIsImp0aSI6IjhjMzg1ZjFlLWM3NTEtNDJlMC1hOGRkLWE1NjA4MTZhZjQ3YiIsImlhdCI6IjkvNC8yMDI0IDM6MzI6NDkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjJmMTYyYTkyLTZiYzYtNDU0NS1iODY0LTJiOWI4NDQ2NTA5MiIsIlVzZXJOYW1lIjoiU3BOZWwiLCJQYXNzd29yZCI6IjEyMzQiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTA1MiIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTA1MiJ9.l4DA3nnZcMvlRiw6661IQO7rJQ1AybyIc6B0Oh3jseU",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5052/api/contacts/2c9d92fb-f18e-45f5-98f4-e593d459a71b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5052",
+							"path": [
+								"api",
+								"contacts",
+								"2c9d92fb-f18e-45f5-98f4-e593d459a71b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjJmMTYyYTkyLTZiYzYtNDU0NS1iODY0LTJiOWI4NDQ2NTA5MiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJTcE5lbCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwibmJmIjoxNzEyNjQzNDQxLCJleHAiOjE3MTI3Mjk4NDF9.YK0ITIat8dZ5cNWvTWrhEKhcRInfrwzxpOpeiRfDliE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJCYXNlV2ViQXBpU3ViamVjdCIsImp0aSI6IjhjMzg1ZjFlLWM3NTEtNDJlMC1hOGRkLWE1NjA4MTZhZjQ3YiIsImlhdCI6IjkvNC8yMDI0IDM6MzI6NDkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjJmMTYyYTkyLTZiYzYtNDU0NS1iODY0LTJiOWI4NDQ2NTA5MiIsIlVzZXJOYW1lIjoiU3BOZWwiLCJQYXNzd29yZCI6IjEyMzQiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTA1MiIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTA1MiJ9.l4DA3nnZcMvlRiw6661IQO7rJQ1AybyIc6B0Oh3jseU",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"2c9d92fb-f18e-45f5-98f4-e593d459a71b\",\n    \"firstName\": \"Sasuke\",\n    \"lastName\": \"Uchiha\",\n    \"email\": \"ninja@gmail.com\",\n    \"dateOfBirth\": \"1998-10-10T15:00:00\",\n    \"phone\": \"56000000\",\n    \"owner\": \"2f162a92-6bc6-4545-b864-2b9b84465092\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5052/api/contacts/2c9d92fb-f18e-45f5-98f4-e593d459a71b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5052",
+							"path": [
+								"api",
+								"contacts",
+								"2c9d92fb-f18e-45f5-98f4-e593d459a71b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImQ5MmRiZDJkLTQ4MzktNDg2ZS1hN2VkLWM5MWFlNjE3ZTZjYSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJTcE5lbCIsIkNvdW50cnkiOiJDVSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE3MTI3MTY0MDcsImV4cCI6MTcxMjgwMjgwN30.rIxI03lBDzu69ja3M0Pa5VtEiisSwPK3nMtJ1yVwreg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5052/api/contacts/A3586D13-6623-4560-AA94-59F06BB3475D",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5052",
+							"path": [
+								"api",
+								"contacts",
+								"A3586D13-6623-4560-AA94-59F06BB3475D"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
